@@ -1,26 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rustom Ali Akash - Portfolio</title>
-</head>
-<body>
-  <h1>Rustom Ali Akash</h1>
-  <p>Full Stack Web Developer based in Bhaluka, Mymensingh</p>
-  <p>I specialize in building responsive, fast, and user-friendly websites and applications.</p>
+// App.jsx
+import React from "react";
 
-  <h2>Skills</h2>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>React</li>
-    <li>Node.js</li>
-  </ul>
+const App = () => {
+  return (
+    <div className="bg-gray-100 text-gray-900 font-sans">
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center flex-col justify-center text-center bg-white">
+        <img
+          src="/profile.jpg"
+          alt="Rustom Ali Akash"
+          className="w-32 h-32 rounded-full border-4 border-blue-500"
+        />
+        <h1 className="text-4xl font-bold mt-4">Rustom Ali Akash</h1>
+        <p className="text-lg text-gray-600">Full Stack Web Developer</p>
+      </section>
 
-  <footer>
-    <p>&copy; 2025 Rustom Ali Akash</p>
-  </footer>
-</body>
-</html>
+      {/* About Section */}
+      <section className="py-12 px-4 max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+        <p className="text-gray-700">
+          I’m a passionate web developer from Bhaluka, Mymensingh. I build modern
+          websites using React, PHP, and WordPress. Let’s build something awesome together!
+        </p>
+      </section>
+
+      {/* Skills Section */}
+      <section className="bg-white py-12 px-4">
+        <h2 className="text-3xl font-semibold text-center mb-8">Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-xl mx-auto text-center">
+          {["HTML", "CSS", "JavaScript", "React", "PHP", "WordPress"].map((skill) => (
+            <div key={skill} className="bg-blue-100 rounded-lg p-4 shadow-sm font-medium">
+              {skill}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-12 px-4 bg-gray-50">
+        <h2 className="text-3xl font-semibold text-center mb-8">Projects</h2>
+        <div className="space-y-4 max-w-xl mx-auto">
+          <Project title="News Portal Website" tech="HTML, CSS, JavaScript" />
+          <Project title="Personal Portfolio" tech="React + Tailwind" />
+          <Project title="WordPress Business Site" tech="PHP + WordPress" />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-12 px-4 text-center">
+        <h2 className="text-3xl font-semibold mb-4">Contact Me</h2>
+        <p className="text-gray-700">Email: <a href="mailto:rustomaliakash24@gmail.com" className="text-blue-600">rustomaliakash24@gmail.com</a></p>
+      </section>
+    </div>
+  );
+};
+
+// Project card component
+const Project = ({ title, tech }) => (
+  <div className="border p-4 rounded-lg bg-white shadow-sm">
+    <h3 className="font-semibold text-xl">{title}</h3>
+    <p className="text-gray-600 text-sm">{tech}</p>
+  </div>
+);
+
+export default App;
